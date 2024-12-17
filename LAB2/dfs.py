@@ -1,3 +1,5 @@
+import graph
+
 def dfs(graph, start):
     visited = set()              
     stack = [start]               
@@ -13,17 +15,6 @@ def dfs(graph, start):
     return visited
 
 
-graph = {
-    'A': ['B', 'C', 'D', 'E'],
-    'B': ['A', 'C', 'G'],
-    'C': ['A', 'B'],
-    'D': ['A', 'E'],
-    'E': ['A', 'D', 'G', 'F'],
-    'F': ['G', 'F'],
-    'G': ['B', 'E', 'F'],
-}
-
-
 print("DFS Traversal:")
-visited_nodes = dfs(graph, 'A')
+visited_nodes = dfs(graph.graph, 'A')
 print("Result:", visited_nodes)

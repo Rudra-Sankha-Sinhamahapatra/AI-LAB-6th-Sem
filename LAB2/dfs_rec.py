@@ -1,12 +1,4 @@
-graph = {
-    'A': ['B', 'C', 'D', 'E'],
-    'B': ['A', 'C', 'G'],
-    'C': ['A', 'B'],
-    'D': ['A', 'E'],
-    'E': ['A', 'D', 'G', 'F'],
-    'F': ['G', 'F'],
-    'G': ['B', 'E', 'F'],
-}
+import graph
 
 def dfs_rec(graph, visited, node):
     if node not in visited:
@@ -19,5 +11,5 @@ def dfs_rec(graph, visited, node):
 start = 'A'
 print("DFS Recursive Traversal:")
 visited = set()
-dfs_rec(graph, visited, start)
+dfs_rec(graph.graph, visited, start)
 print("Result:", visited)
