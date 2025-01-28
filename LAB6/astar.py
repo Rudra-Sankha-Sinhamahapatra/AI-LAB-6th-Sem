@@ -1,5 +1,8 @@
 
-
+'''
+WAP using A* algorithm to find the shortest path from the starting
+node A to G for the following graph.
+'''
 
 from queue import PriorityQueue
 
