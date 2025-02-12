@@ -3,19 +3,15 @@ from collections import deque
 import heapq
 
 def euclidean_distance(node, goal):
-    """Calculate the Euclidean distance between two points (x, y)."""
     return math.sqrt((node[1] - goal[1]) ** 2 + (node[2] - goal[2]) ** 2)
 
 def is_goal(node, goal):
-    """Check if the current node is the goal node."""
     return node == goal
 
 def get_neighbors(graph, node):
-    """Retrieve neighbor node names from the graph."""
     return [neighbor[0] for neighbor in graph.get(node, [])] 
 
 def reconstruct_path(parent, goal):
-    """Reconstruct the path from the start node to the goal node."""
     path = []
     while goal is not None:
         path.append(goal)
@@ -23,7 +19,6 @@ def reconstruct_path(parent, goal):
     return path[::-1] 
 
 def a_star(graph, start, goal, heuristic):
-    """Perform A* to find a path from start to goal in a weighted graph."""
     open_list = []
     heapq.heappush(open_list, (0 + heuristic[start], start)) 
     g_score = {start: 0}  
@@ -49,7 +44,7 @@ def a_star(graph, start, goal, heuristic):
                 g_score[neighbor] = tentative_g_score
                 f_score[neighbor] = tentative_g_score + heuristic[neighbor]
                 heapq.heappush(open_list, (f_score[neighbor], neighbor))
-                parent[neighbor] = current  # Track the path
+                parent[neighbor] = current  
 
     return None  
 
