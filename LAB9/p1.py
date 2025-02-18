@@ -46,7 +46,6 @@ def newState(puzzle):
     return newstates  
 
 def eightpuzzle(start, goal):
-    """Solve the 8-puzzle using BFS."""
     queue = deque([(start, [])])
     visited = set()
 
